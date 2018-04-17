@@ -16,7 +16,16 @@
 	<context:component-scan base-package="com.mazaiting.controller"/>
 	
 	<!-- 配置注解驱动，如果配置此标签，则不用配置处理器映射器和处理器适配器 -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven conversion-service="conversionService"/>
+	
+	<!-- 转换器配置 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean class="com.mazaiting.converter.DateConverter"/>
+			</set>
+		</property>
+	</bean>
 	
 	<!-- 配置视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -26,7 +35,8 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
-      
+    <!-- 配置全局异常处理器 -->
+    <bean class="com.mazaiting.exception.GlobalExceptionResolver"/>  
 </beans>
 
 

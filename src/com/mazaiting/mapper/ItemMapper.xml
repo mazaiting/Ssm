@@ -4,4 +4,12 @@
 	<select id="getItemList" resultType="Item">
 		select * from items
 	</select>
+	
+	<select id="getItemId" parameterType="int" resultType="Item">
+		select * from items where id = #{id} 
+	</select>
+	
+	<update id="updateItem" parameterType="Item">
+		update items set name=#{name}, price=#{price}, detail=#{detail} where id = #{id}
+	</update>
 </mapper>

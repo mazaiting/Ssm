@@ -12,17 +12,34 @@ import com.mazaiting.pojo.Item;
 
 public class ItemServcieTest {
 	ApplicationContext context;
+	ItemService service;
 	@Before
 	public void init() {
 		context = new ClassPathXmlApplicationContext(Constant.PATHS);
+		service = context.getBean(ItemService.class);
 	}
 	
 	@Test
 	public void testGetItemList() {
-		ItemService service = context.getBean(ItemService.class);
 		List<Item> list = service.getItemList();
 		for (Item item : list) {
 			System.out.println(item);
 		}
+	}
+	
+	@Test 
+	public void testGetItemById(){
+		Item item = service.getItemById(1);
+		System.out.println(item.toString());
+	}
+	
+	@Test
+	public void testUpdateItem(){
+		Item item = new Item();
+		item.setId(1);
+		item.setName("小米4c");
+		item.setDetail("智能手机");
+		item.setPrice(200.0f);
+		service.updateItem(item);
 	}
 }

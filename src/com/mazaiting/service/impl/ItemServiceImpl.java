@@ -22,4 +22,14 @@ public class ItemServiceImpl implements ItemService {
 		return mapper.getItemList();
 	}
 
+	@Override
+	public Item getItemById(int id) {
+		return mapper.getItemId(id);
+	}
+
+	@Override
+	public void updateItem(Item item) {
+		mapper.updateItem(item);
+	}
+
 }

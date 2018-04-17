@@ -11,6 +11,8 @@ public class Item {
 	private Float price;
 	// 图片
 	private String pic;
+	// 描述
+	private String detail;
 	// 时间戳
 	private Timestamp createtime;
 
@@ -54,10 +56,17 @@ public class Item {
 		this.createtime = createtime;
 	}
 
-	@Override
-	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", pic=" + pic + ", createtime=" + createtime
-				+ "]";
+	public String getDetail() {
+		return detail;
 	}
 
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", pic=" + pic + ", detail=" + detail
+				+ ", createtime=" + createtime + "]";
+	}
 }

@@ -34,6 +34,15 @@ Java Resources源码包：
 	- web.xml Web工程的配置文件
 
 #V1.0
-## add http://localhost:8080/Ssm/itemList.action
+## add `http://localhost:8080/Ssm/itemList.action`
+- src
+	添加对应的功能模块,ItemController,ItemMapper.xml,ItemMapper,Item,ItemService,ItemServiceImpl
+- test 
+	添加对ItemMapper,ItemService方法测试
+- WebContent
+	- WEB-INF
+		- jsp
+			- itemList.jsp页面
+
 
 
