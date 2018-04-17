@@ -18,8 +18,8 @@ Java Resources源码包：
 		applicationContext-service.xml Service层服务配置
 		applicationContext-trans.xml DAO层事务配置
 		springmvc.xml 	SpringMVC的web配置
-	db.properties       数据库信息配置，自己的数据库配置在这里更改
-	log4j.properties    日志信息配置
+	- db.properties       数据库信息配置，自己的数据库配置在这里更改
+	- log4j.properties    日志信息配置
 - test
 	- com.mazaiting
 		- mapper    测试数据库包
@@ -31,5 +31,9 @@ Java Resources源码包：
 	- js    JavaScript文件
 	- jsp   Jsp文件
 	- lib   第三方jar包
-	web.xml Web工程的配置文件
+	- web.xml Web工程的配置文件
+
+#V1.0
+## add http://localhost:8080/Ssm/itemList.action
+
 
