@@ -7,6 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>查询商品列表</title>
+		<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-3.3.1.min.js"></script>
 	</head>
 	<body>
 		<form action="${pageContext.request.contextPath }/item/queryitem.action" method="post">
@@ -46,11 +47,26 @@
 						<td><input type="text" name="itemList[${s.index }].price" value="${item.price }"/></td>
 						<td><input type="text" name="itemList[${s.index }].createtime" value='<fmt:formatDate value="${item.createtime }" pattern="yyyy-MM-dd HH:mm:ss"/>'/></td>
 						<td><input type="text" name="itemList[${s.index }].detail" value="${item.detail }"/></td>
-						<td><a href="${pageContext.request.contextPath }/itemEdit.action?id=${item.id}">修改</a></td>
+						<%-- <td><a href="${pageContext.request.contextPath }/itemEdit.action?id=${item.id}">修改</a></td> --%>
+						<td><a href="${pageContext.request.contextPath }/itemEdit/${item.id}">修改</a></td>
 					</tr>
 				</c:forEach>
 			</table>
 		</form>
+		<button onclick="sendJson()">JSON数据交互测试</button>
+		<script type="text/javascript">
+			function sendJson() {
+				$.ajax({
+					type:"post",
+					url:"${pageContext.request.contextPath }/jsonTest.action",
+					data:'{"id":"1","name":"电冰箱","price":"1999"}',
+					contentType:"application/json;charset=utf-8",
+					success:function(data) {
+						alert(data.id + ":" + data.name);
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
 

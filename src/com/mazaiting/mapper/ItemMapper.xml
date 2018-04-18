@@ -10,6 +10,6 @@
 	</select>
 	
 	<update id="updateItem" parameterType="Item">
-		update items set name=#{name}, price=#{price}, detail=#{detail} where id = #{id}
+		update items set name=#{name}, price=#{price}, detail=#{detail}, pic=#{pic} where id = #{id}
 	</update>
 </mapper>
