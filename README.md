@@ -33,8 +33,8 @@ Java Resources源码包：
 	- lib   第三方jar包
 	- web.xml Web工程的配置文件
 
-#V1.0
-## add `http://localhost:8080/Ssm/itemList.action`
+## V1.0
+#add `http://localhost:8080/Ssm/itemList.action`
 - src
 	添加对应的功能模块,ItemController,ItemMapper.xml,ItemMapper,Item,ItemService,ItemServiceImpl
 - test 
